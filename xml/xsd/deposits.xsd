@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+		   xmlns:stl="http://www.codesynthesis.com/xmlns/xsstl" 
+		   xmlns:fin="www.example.org/xmlns/financial"
+		   xmlns:bank="www.example.org/xmlns/bank"
+		   elementFormDefault="qualified">
+	<xs:import namespace="http://www.codesynthesis.com/xmlns/xsstl" 
+			   schemaLocation="iso3166-country-code.xsd"/>
+    <xs:import namespace="www.example.org/xmlns/financial" 
+   			   schemaLocation="financial.xsd"/>
+   	<xs:import namespace="www.example.org/xmlns/bank" 
+			   schemaLocation="bank.xsd"/>
+
+	<!-- SIMPLE TYPES -->
+	
+	<xs:simpleType name="depositor">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z][a-z]* [A-Z][a-z]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="call"/>
+			<xs:enumeration value="time"/>
+			<xs:enumeration value="checking"/>
+			<xs:enumeration value="accumulative"/>
+			<xs:enumeration value="savings"/>
+			<xs:enumeration value="metals"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="accountId">
+		<xs:restriction base="xs:int">
+			<xs:pattern value="\d{5}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="timeConstraint">
+		<xs:restriction base="xs:unsignedInt"/>
+	</xs:simpleType>
+
+	<!-- COMPLEX TYPES -->
+	
+	<xs:complexType name="deposit">
+		<xs:all>
+			<xs:element name="depositor" type="depositor"/>
+			<xs:element name="account-id" type="accountId"/>
+			<xs:element ref="fin:amount-on-deposit"/>
+			<xs:element ref="fin:interest"/>
+			<xs:element name="time-constraint" type="timeConstraint"/>
+		</xs:all>
+		<xs:attribute name="id" type="xs:ID" use="required"/>
+		<xs:attribute name="type" type="type" use="required"/>
+		<xs:attribute ref="bank:name" use="required"/>
+		<xs:attribute name="country" type="stl:ISO3166CountryCode" use="required"/>
+	</xs:complexType>
+
+	<xs:complexType name="deposits">
+		<xs:sequence>
+			<xs:element name="deposit" type="deposit" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- ROOT ELEMENT -->
+	<xs:element name="deposits" type="deposits"/>
+</xs:schema>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xsl/deposits.xsl"?>
+<deposits xmlns:bank="www.example.org/xmlns/bank" 
+		  xmlns:fin="www.example.org/xmlns/financial" 
+		  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		  xsi:schemaLocation="www.example.org/xmlns/deposit xsd/deposits.xsd">
+	<deposit id="id00000" type="call" bank:name="Reiffeisen" country="UA">
+		<depositor>Bogdan Repeta</depositor>
+		<account-id>12345</account-id>
+		<fin:amount-on-deposit>2000</fin:amount-on-deposit>
+		<fin:interest>10</fin:interest>
+		<time-constraint>12</time-constraint>
+	</deposit>
+	<deposit id="id00001" type="savings" bank:name="Barclays" country="GB">
+		<depositor>Vincent Jones</depositor>
+		<account-id>94860</account-id>
+		<fin:amount-on-deposit>5000</fin:amount-on-deposit>
+		<fin:interest>0</fin:interest>
+		<time-constraint>36</time-constraint>
+	</deposit>
+	<deposit id="id00002" type="checking" bank:name="Privat" country="UA">
+		<depositor>Peter Piatochkin</depositor>
+		<account-id>70412</account-id>
+		<fin:amount-on-deposit>1000</fin:amount-on-deposit>
+		<fin:interest>0</fin:interest>
+		<time-constraint>12</time-constraint>
+	</deposit>
+	<deposit id="id00003" type="time" bank:name="Deutschebank" country="DE">
+		<depositor>Manuel Neuer</depositor>
+		<account-id>77729</account-id>
+		<fin:amount-on-deposit>10000</fin:amount-on-deposit>
+		<fin:interest>10</fin:interest>
+		<time-constraint>24</time-constraint>
+	</deposit>
+	<deposit id="id00004" type="accumulative" bank:name="Lehman Brothers" country="US">
+		<depositor>Natalie Dormer</depositor>
+		<account-id>30612</account-id>
+		<fin:amount-on-deposit>10000</fin:amount-on-deposit>
+		<fin:interest>12</fin:interest>
+		<time-constraint>24</time-constraint>
+	</deposit>
+	<deposit id="id00005" type="metals" bank:name="Santander" country="ES">
+		<depositor>Fernando Alonso</depositor>
+		<account-id>93754</account-id>
+		<fin:amount-on-deposit>10000</fin:amount-on-deposit>
+		<fin:interest>5</fin:interest>
+		<time-constraint>36</time-constraint>
+	</deposit>
+</deposits>

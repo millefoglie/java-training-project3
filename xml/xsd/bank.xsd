@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+		   xmlns:bank="www.example.org/xmlns/bank"
+		   targetNamespace="www.example.org/xmlns/bank">
+
+	<!-- SIMPLE TYPES -->
+	<xs:simpleType name="bankName">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
+	<!-- ELEMENTS -->
+	<xs:attribute name="name" type="bank:bankName"/>
+</xs:schema>

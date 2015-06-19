@@ -1,0 +1,75 @@
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+	display: table-cell;
+    vertical-align: middle;
+	font-family: sans-serif;
+}
+
+#wrapper {
+	margin: 0 auto;
+	padding: 0 auto;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table th {
+	text-align: center;
+	font-weight: 600;
+	border-bottom: 2px solid black;
+	background: #ffffff;
+	white-space: normal;
+}
+
+table tr:nth-child(odd) {
+	background: #dfdfdf;
+}
+
+table td {
+	padding: 1px 10px;
+}
+
+table .col-id {
+	text-align: right;
+}
+
+table .col-depositor {
+	text-align: left;
+}
+
+table .col-account-id {
+	text-align: right;
+}
+
+table .col-type {
+	text-align: left;
+}
+
+table .col-bank {
+	text-align: left;
+}
+
+table .col-country {
+	text-align: right;
+	width: 2em;
+}
+
+table .col-amount {
+	text-align: right;
+	width: 6em;
+}
+
+table .col-interest {
+	text-align: right;
+	width: 3em;
+}
+
+table .col-time {
+	text-align: right;
+	width: 4em;
+}

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+		   xmlns:fin="www.example.org/xmlns/financial"
+		   targetNamespace="www.example.org/xmlns/financial">
+
+	<!-- SIMPLE TYPES -->
+	<xs:simpleType name="amountOnDeposit">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>
+      		<xs:maxInclusive value="50000"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="interest">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- ELEMENTS -->
+	<xs:element name="amount-on-deposit" type="fin:amountOnDeposit"/>
+	<xs:element name="interest" type="fin:interest"/>
+</xs:schema>
