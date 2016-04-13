@@ -182,7 +182,7 @@ public class DepositProcessor {
             return;
         }
 
-        depositsDB.getDeposit().stream()
+        depositsDB.getDeposits().stream()
                 .forEach(System.out::println);
     }
 
@@ -198,18 +198,18 @@ public class DepositProcessor {
 
         switch (how) {
         case DEPOSITOR:
-            Collections.sort(depositsDB.getDeposit(),
+            Collections.sort(depositsDB.getDeposits(),
                              (Deposit a, Deposit b) 
                              -> a.getDepositor().compareTo(b.getDepositor()));
             break;
         case AMOUNT:
-            Collections.sort(depositsDB.getDeposit(),
+            Collections.sort(depositsDB.getDeposits(),
                              (Deposit a, Deposit b) 
                              -> a.getAmountOnDeposit()
                              .compareTo(b.getAmountOnDeposit()));
             break;
         case TIME:
-            Collections.sort(depositsDB.getDeposit(),
+            Collections.sort(depositsDB.getDeposits(),
                              (Deposit a, Deposit b) 
                              -> Long.compare(a.getTimeConstraint(), 
                         	     b.getTimeConstraint()));

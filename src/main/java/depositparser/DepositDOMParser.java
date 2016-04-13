@@ -45,7 +45,7 @@ public class DepositDOMParser extends AbstractDepositParser {
         DepositsDB depositsDB = new DepositsDB();
         
         // get reference to the empty deposits list
-        List<Deposit> list = depositsDB.getDeposit();
+        List<Deposit> list = depositsDB.getDeposits();
 
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         dbf.setNamespaceAware(true);

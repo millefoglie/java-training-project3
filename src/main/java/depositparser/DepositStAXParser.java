@@ -64,7 +64,7 @@ public class DepositStAXParser extends AbstractDepositParser {
             Deposit deposit = null;
             
             // get reference to the empty deposits list
-            List<Deposit> list = depositsDB.getDeposit();
+            List<Deposit> list = depositsDB.getDeposits();
             
             ContentType flag = ContentType.NONE;
 

@@ -139,7 +139,7 @@ class DepositContentHandler extends DefaultHandler {
     public void endElement(String uri, String localName, String qName)
             throws SAXException {
         if ("deposit".equals(qName)) {
-            depositsDB.getDeposit().add(deposit);
+            depositsDB.getDeposits().add(deposit);
         }
         
         flag = ContentType.NONE;
